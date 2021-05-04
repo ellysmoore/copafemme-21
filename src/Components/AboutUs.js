@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import img from "../img/about.jpg";
 function Aboutus() {
   // const aboutImage = require("../img/about.jpg");
 
@@ -10,7 +10,7 @@ function Aboutus() {
         <div className="container">
           <div className="row no-gutters">
             <div className="col-lg-6 video-box">
-              <img src="../img/about.jpg" className="img-fluid" alt="" />
+              <img src={img} className="img-fluid" alt="" />
               <Link
                 to="https://youtu.be/IfTaPIVKE38"
                 className="venobox play-btn mb-4"
