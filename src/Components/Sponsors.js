@@ -19,10 +19,8 @@ function Sponsors() {
               >
                 <div class="info-box">
                   <img
-                    src="assets/img/techspice.png"
-                    alt=""
-                    width="150"
-                    height="150"
+                    src={sponsor.image}
+                    style={{ height: 150, width: 150 }}
                   />
                   <h3>{sponsor.name}</h3>
                 </div>
