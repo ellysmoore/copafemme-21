@@ -4,33 +4,35 @@ import img1 from "../img/slide/slide-1.jpg";
 import img2 from "../img/slide/slide-2.jpg";
 import img3 from "../img/slide/slide-3.jpg";
 
+var sectionStyle = {
+  backgroundImage: "url(" + { img1 } + ")",
+};
+
 function SlideShow() {
   return (
     <div>
       <section id="hero">
-        <div class="hero-container">
+        <div className="hero-container">
           <div
             id="heroCarousel"
-            class="carousel slide carousel-fade"
+            className="carousel slide carousel-fade"
             data-ride="carousel"
           >
-            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+            <ol
+              className="carousel-indicators"
+              id="hero-carousel-indicators"
+            ></ol>
 
-            <div class="carousel-inner" role="listbox">
+            <div className="carousel-inner" role="listbox">
               {/* <!-- Slide 1 --> */}
-              <div
-                class="carousel-item active"
-                style={{
-                  backgroundImage: img1,
-                }}
-              >
-                <div class="carousel-container">
-                  <div class="carousel-content container">
-                      <h2  className="animated fadeInDown">
-                        <span>
-                        C<i class="icofont-soccer"></i>PA FEMME
+              <div className="carousel-item active" style={sectionStyle}>
+                <div className="carousel-container">
+                  <div className="carousel-content container">
+                    <h2 className="animated fadeInDown">
+                      <span>
+                        C<i className="icofont-soccer"></i>PA FEMME
                       </span>
-                      </h2>
+                    </h2>
                     <p className="animated fadeInUp">
                       We are a non-profit organisation that creates a safe and
                       encouraging space for young women in Nigeria to express
@@ -38,7 +40,7 @@ function SlideShow() {
                     </p>
                     <Link
                       to="/about"
-                      class="btn-get-started animated fadeInUp scrollto"
+                      className="btn-get-started animated fadeInUp scrollto"
                       style={{ backgroundColor: "#051e63" }}
                     >
                       Read More
@@ -49,81 +51,83 @@ function SlideShow() {
 
               {/* <!-- Slide 2 --> */}
               <div
-                class="carousel-item"
+                className="carousel-item"
                 style={{
                   backgroundImage: img2,
                 }}
               >
-                <div class="carousel-container">
-                  <div class="carousel-content container">
-                    <h2 class="animated fadeInDown">RAISE MONEY FOR CHARITY</h2>
-                    <p class="animated fadeInUp">
+                <div className="carousel-container">
+                  <div className="carousel-content container">
+                    <h2 className="animated fadeInDown">
+                      RAISE MONEY FOR CHARITY
+                    </h2>
+                    <p className="animated fadeInUp">
                       We Aim To Support Various Female Focused Causes In Nigeria
                       And All Profits Generated Will Be Donated To Charity.
                     </p>
-                    <a
-                      href="#about"
-                      class="btn-get-started animated fadeInUp scrollto"
+                    <Link
+                      to="/about"
+                      className="btn-get-started animated fadeInUp scrollto"
                       style={{ backgroundColor: "#051e63" }}
                     >
                       Read More
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
 
               {/* <!-- Slide 3 --> */}
               <div
-                class="carousel-item"
+                className="carousel-item"
                 style={{
                   backgroundImage: img3,
                 }}
               >
-                <div class="carousel-container">
-                  <div class="carousel-content container">
-                    <h2 class="animated fadeInDown">
+                <div className="carousel-container">
+                  <div className="carousel-content container">
+                    <h2 className="animated fadeInDown">
                       CELEBRATE TALENTED YOUNG WOMEN IN SPORTS
                     </h2>
-                    <p class="animated fadeInUp">
+                    <p className="animated fadeInUp">
                       We aim to celebrate talented young women in sports through
                       acknowledging them and giving awards.
                     </p>
-                    <a
-                      href="#about"
-                      class="btn-get-started animated fadeInUp scrollto"
+                    <Link
+                      to="#about"
+                      className="btn-get-started animated fadeInUp scrollto"
                       style={{ backgroundColor: "#051e63" }}
                     >
                       Read More
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
 
-            <a
-              class="carousel-control-prev"
-              href="#heroCarousel"
+            <Link
+              className="carousel-control-prev"
+              to="#heroCarousel"
               role="button"
               data-slide="prev"
             >
               <span
-                class="carousel-control-prev-icon icofont-rounded-left"
+                className="carousel-control-prev-icon icofont-rounded-left"
                 aria-hidden="true"
               ></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a
-              class="carousel-control-next"
-              href="#heroCarousel"
+              <span className="sr-only">Previous</span>
+            </Link>
+            <Link
+              className="carousel-control-next"
+              to="#heroCarousel"
               role="button"
-              data-slide="next"
+              dataSlide="next"
             >
               <span
                 class="carousel-control-next-icon icofont-rounded-right"
                 aria-hidden="true"
               ></span>
               <span class="sr-only">Next</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
