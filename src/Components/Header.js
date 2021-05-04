@@ -15,16 +15,22 @@ function Header() {
             321 4807
           </div>
           <div class="social-links float-right">
-            <Link to="#" class="twitter">
+            <Link to="https://twitter.com/copafemme_?s=11" class="twitter">
               <i class="icofont-twitter"></i>
             </Link>
             <Link to="#" class="facebook">
               <i class="icofont-facebook"></i>
             </Link>
-            <Link to="#" class="instagram">
+            <Link
+              to="https://www.instagram.com/copafemme_/?igshid=12hneodp3zuft"
+              class="instagram"
+            >
               <i class="icofont-instagram"></i>
             </Link>
-            <Link to="#" class="instagram">
+            <Link
+              to="https://www.youtube.com/watch?v=IfTaPIVKE38&t=32s"
+              class="instagram"
+            >
               <i class="icofont-youtube"></i>
             </Link>
           </div>

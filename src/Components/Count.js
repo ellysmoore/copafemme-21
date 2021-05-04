@@ -12,7 +12,7 @@ function Count() {
                   className="icofont-simple-smile"
                   style={{ color: "#20b38e" }}
                 ></i>
-                <span data-toggle="counter-up">232</span>
+                <span data-toggle="counter-up">542</span>
                 <p>Supporters</p>
               </div>
             </div>
@@ -24,7 +24,7 @@ function Count() {
             >
               <div className="count-box">
                 <i className="icofont-gift" style={{ color: "#c042ff" }}></i>
-                <span data-toggle="counter-up">21</span>
+                <span data-toggle="counter-up">28</span>
                 <p>Donations</p>
               </div>
             </div>
