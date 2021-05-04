@@ -25,7 +25,7 @@ function SlideShow() {
 
             <div className="carousel-inner" role="listbox">
               {/* <!-- Slide 1 --> */}
-              <div className="carousel-item active" style={sectionStyle}>
+              <div className="carousel-item active" style={{backgroundImage: "url("+img1+")"}}>
                 <div className="carousel-container">
                   <div className="carousel-content container">
                     <h2 className="animated fadeInDown">
@@ -53,7 +53,7 @@ function SlideShow() {
               <div
                 className="carousel-item"
                 style={{
-                  backgroundImage: img2,
+                  backgroundImage: "url("+img2+")"
                 }}
               >
                 <div className="carousel-container">
@@ -80,7 +80,7 @@ function SlideShow() {
               <div
                 className="carousel-item"
                 style={{
-                  backgroundImage: img3,
+                  backgroundImage: "url("+img3+")"
                 }}
               >
                 <div className="carousel-container">
