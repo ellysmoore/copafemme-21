@@ -62,8 +62,6 @@ function RegisterTeam() {
       body: JSON.stringify({ form }),
       headers: { "Content-Type": "application/json" },
     }).then((res) => res.json());
-    console.log(res.data);
-    // .then((json) => setForm(json.form));
   };
 
   const showError = (errorObj) => {
