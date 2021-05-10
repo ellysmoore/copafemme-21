@@ -35,7 +35,7 @@ function Gallery() {
               <div className="portfolio-wrap">
                 <img
                   src="assets/img/portfolio/portfolio-1.jpg"
-                  class="img-fluid"
+                  className="img-fluid"
                   alt=""
                 />
                 <div className="portfolio-info">
@@ -47,7 +47,7 @@ function Gallery() {
                       data-gall="portfolioGallery"
                       className="venobox"
                     >
-                      <i class="icofont-eye"></i>
+                      <i className="icofont-eye"></i>
                     </Link>
                   </div>
                 </div>
@@ -61,7 +61,7 @@ function Gallery() {
                   className="img-fluid"
                   alt=""
                 />
-                <div class="portfolio-info">
+                <div className="portfolio-info">
                   <h4>Performance</h4>
                   <p>Music Performances</p>
                   <div className="portfolio-links">
@@ -70,168 +70,168 @@ function Gallery() {
                       data-gall="portfolioGallery"
                       className="venobox"
                     >
-                      <i class="icofont-eye"></i>
+                      <i className="icofont-eye"></i>
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-football">
-              <div class="portfolio-wrap">
+            <div className="col-lg-4 col-md-6 portfolio-item filter-football">
+              <div className="portfolio-wrap">
                 <img
                   src="assets/img/portfolio/portfolio-3.jpg"
-                  class="img-fluid"
+                  className="img-fluid"
                   alt=""
                 />
-                <div class="portfolio-info">
+                <div className="portfolio-info">
                   <h4>Football Tournament</h4>
                   <p>Football</p>
-                  <div class="portfolio-links">
+                  <div className="portfolio-links">
                     <a
                       href="assets/img/portfolio/portfolio-3.jpg"
                       data-gall="portfolioGallery"
-                      class="venobox"
+                      className="venobox"
                     >
-                      <i class="icofont-eye"></i>
+                      <i className="icofont-eye"></i>
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-entertainment">
-              <div class="portfolio-wrap">
+            <div className="col-lg-4 col-md-6 portfolio-item filter-entertainment">
+              <div className="portfolio-wrap">
                 <img
                   src="assets/img/portfolio/portfolio-7.jpg"
-                  class="img-fluid"
+                  className="img-fluid"
                   alt=""
                 />
-                <div class="portfolio-info">
+                <div className="portfolio-info">
                   <h4>Entertainment</h4>
                   <p>Games & Entertainments</p>
-                  <div class="portfolio-links">
+                  <div className="portfolio-links">
                     <a
                       href="assets/img/portfolio/portfolio-7.jpg"
                       data-gall="portfolioGallery"
-                      class="venobox"
+                      className="venobox"
                     >
-                      <i class="icofont-eye"></i>
+                      <i className="icofont-eye"></i>
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-music">
-              <div class="portfolio-wrap">
+            <div className="col-lg-4 col-md-6 portfolio-item filter-music">
+              <div className="portfolio-wrap">
                 <img
                   src="assets/img/portfolio/portfolio-5.jpg"
-                  class="img-fluid"
+                  className="img-fluid"
                   alt=""
                 />
-                <div class="portfolio-info">
+                <div className="portfolio-info">
                   <h4>Performance</h4>
                   <p>Music Performances</p>
-                  <div class="portfolio-links">
+                  <div className="portfolio-links">
                     <a
                       href="assets/img/portfolio/portfolio-5.jpg"
                       data-gall="portfolioGallery"
-                      class="venobox"
+                      className="venobox"
                     >
-                      <i class="icofont-eye"></i>
+                      <i className="icofont-eye"></i>
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-football">
-              <div class="portfolio-wrap">
+            <div className="col-lg-4 col-md-6 portfolio-item filter-football">
+              <div className="portfolio-wrap">
                 <img
                   src="assets/img/portfolio/portfolio-6.jpg"
-                  class="img-fluid"
+                  className="img-fluid"
                   alt=""
                 />
-                <div class="portfolio-info">
+                <div className="portfolio-info">
                   <h4>Football Tournament</h4>
                   <p>Football</p>
-                  <div class="portfolio-links">
+                  <div className="portfolio-links">
                     <a
                       href="assets/img/portfolio/portfolio-6.jpg"
                       data-gall="portfolioGallery"
-                      class="venobox"
+                      className="venobox"
                     >
-                      <i class="icofont-eye"></i>
+                      <i className="icofont-eye"></i>
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-entertainment">
-              <div class="portfolio-wrap">
+            <div className="col-lg-4 col-md-6 portfolio-item filter-entertainment">
+              <div className="portfolio-wrap">
                 <img
                   src="assets/img/portfolio/portfolio-4.jpg"
-                  class="img-fluid"
+                  className="img-fluid"
                   alt=""
                 />
-                <div class="portfolio-info">
+                <div className="portfolio-info">
                   <h4>Entertainment</h4>
                   <p>Games & Entertainments</p>
-                  <div class="portfolio-links">
+                  <div className="portfolio-links">
                     <a
                       href="assets/img/portfolio/portfolio-4.jpg"
                       data-gall="portfolioGallery"
-                      class="venobox"
+                      className="venobox"
                     >
-                      <i class="icofont-eye"></i>
+                      <i className="icofont-eye"></i>
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-entertainment">
-              <div class="portfolio-wrap">
+            <div className="col-lg-4 col-md-6 portfolio-item filter-entertainment">
+              <div className="portfolio-wrap">
                 <img
                   src="assets/img/portfolio/portfolio-8.jpg"
-                  class="img-fluid"
+                  className="img-fluid"
                   alt=""
                 />
-                <div class="portfolio-info">
+                <div className="portfolio-info">
                   <h4>Entertainment</h4>
                   <p>Games & Entertainments</p>
-                  <div class="portfolio-links">
+                  <div className="portfolio-links">
                     <a
                       href="assets/img/portfolio/portfolio-8.jpg"
                       data-gall="portfolioGallery"
-                      class="venobox"
+                      className="venobox"
                     >
-                      <i class="icofont-eye"></i>
+                      <i className="icofont-eye"></i>
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-music">
-              <div class="portfolio-wrap">
+            <div className="col-lg-4 col-md-6 portfolio-item filter-music">
+              <div className="portfolio-wrap">
                 <img
                   src="assets/img/portfolio/portfolio-9.jpg"
-                  class="img-fluid"
+                  className="img-fluid"
                   alt=""
                 />
-                <div class="portfolio-info">
+                <div className="portfolio-info">
                   <h4>Performance</h4>
                   <p>Music Performance</p>
-                  <div class="portfolio-links">
+                  <div className="portfolio-links">
                     <a
                       href="assets/img/portfolio/portfolio-9.jpg"
                       data-gall="portfolioGallery"
-                      class="venobox"
+                      className="venobox"
                     >
-                      <i class="icofont-eye"></i>
+                      <i className="icofont-eye"></i>
                     </a>
                   </div>
                 </div>

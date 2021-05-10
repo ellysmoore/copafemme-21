@@ -1,77 +1,71 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function RegisterTeam() {
-  // const [name, setName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [phone, setPhone] = useState("");
-  // const [players, setPlayers] = useState([]);
-  // const [contactPerson, setContactPerson] = useState("");
-  const [successMessage, setSuccessMessage] = useState(false);
-  // const [errorMessage, setErrorMessage] = useState(false);
-  const [form, setForm] = useState({
+  const [values, setValues] = useState({
     teamName: "",
     email: "",
     phoneNumber: "",
-    players: "",
+    playerNames: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDisplayed, setIsDisplayed] = useState(false)
 
   const validate = () => {
-    // console.log('form', form)
     let err = {};
-    if (!form.teamName) {
+    if (!values.teamName) {
       err.teamName = "teamName is required";
     }
-    if (!form.email) {
+    if (!values.email) {
       err.email = "email is required";
     }
-    if (!form.phoneNumber) {
+    if (!values.phoneNumber) {
       err.phoneNumber = "phoneNumber is required";
     }
-    // if (!form.players) {
-    //   err.players = "players is required";
-    // }
     return err;
   };
 
   const handleChange = (e) => {
-    setForm({
-      ...form,
+    setValues({
+      ...values,
       [e.target.name]: e.target.value,
     });
   };
 
-  // const registerTeam = async (data) => {
-  //   await fetch(
-  //     "https://api/",
-  //     {
-  //       method: "POST",
-  //       headers: {
-  //         Accept: "application/json",
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(data),
-  //     }
-  //   );
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch("/api", {
-      method: "POST",
-      body: JSON.stringify({ form }),
-      headers: { "Content-Type": "application/json" },
-    }).then((res) => res.json());
-    // .then((json) => setForm(json.form));
+    validate();
+    const data = {
+      teamName: values.teamName,
+      email: values.email,
+      phoneNumber: values.phoneNumber,
+      playerNames: values.playerNames
+    }
+    try {
+      setIsSubmitting(true);
+      const res = axios.post(
+          "http://localhost:3060/send",
+          data
+      );
+      setIsSubmitting(false)
+      setIsDisplayed(true)
+      setValues({
+        teamName: '',
+        email: '',
+        phoneNumber: '',
+        playerNames: ''
+      })
+      setTimeout(
+          function() {
+            setIsDisplayed(false);
+          },
+          3000
+      )
+    } catch (e) {
+      console.log(e)
+    }
   };
 
-  const showError = (errorObj) => {
-    let errMsg = "";
-    for (let err in errorObj) {
-      errMsg += `${errorObj[err]}. `;
-    }
-    alert(`Errors ${errMsg}`);
-  };
 
   return (
     <div>
@@ -83,11 +77,12 @@ function RegisterTeam() {
 
           <div className="card">
             <div className="card-body">
-              <form className="form" onSubmit={handleSubmit}>
-                {/* <div class="alert alert-success" role="alert">
-                  <b>Registration successful!</b> Please check your email. Thank
-                  you.
-                </div> */}
+              <form className="form" onSubmit={(e) =>  handleSubmit(e)}>
+
+                {isDisplayed && <div className="alert alert-success" role="alert">
+                  <b>Registration successful!</b>
+                </div> }
+
                 <div className="form-group">
                   <label for="">Team Name</label>
                   <input
@@ -96,7 +91,7 @@ function RegisterTeam() {
                     name="teamName"
                     placeholder="Enter team name..."
                     onChange={handleChange}
-                    value={form.teamName}
+                    value={values.teamName}
                   />
                 </div>
                 <div className="form-group">
@@ -108,7 +103,7 @@ function RegisterTeam() {
                     placeholder="Enter contact email..."
                     required
                     onChange={handleChange}
-                    value={form.email}
+                    value={values.email}
                   />
                 </div>
                 <div className="form-group">
@@ -120,7 +115,7 @@ function RegisterTeam() {
                     placeholder="Enter contact phone number..."
                     required
                     onChange={handleChange}
-                    value={form.phoneNumber}
+                    value={values.phoneNumber}
                   />
                 </div>
                 <div className="form-group">
@@ -135,7 +130,7 @@ function RegisterTeam() {
                     cols="80"
                     placeholder="Jane Done, Rose Mary, ..."
                     onChange={handleChange}
-                    value={form.players}
+                    value={values.playerNames}
                   />
                 </div>
                 <div className="form-group">
@@ -148,7 +143,7 @@ function RegisterTeam() {
                   />
                   <span> I have read and accept the terms and conditions</span>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <button
                     type="sumbit"
                     className="btn btn-success"
@@ -157,7 +152,7 @@ function RegisterTeam() {
                   >
                     Proceed
                   </button>
-                  {isSubmitting ? (
+                  {isSubmitting &&
                     <div
                       className="spinner-border"
                       role="status"
@@ -165,7 +160,7 @@ function RegisterTeam() {
                     >
                       <span className="sr-only">Loading...</span>
                     </div>
-                  ) : null}
+                  }
                 </div>
               </form>
             </div>

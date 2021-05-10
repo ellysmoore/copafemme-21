@@ -78,7 +78,7 @@ function Count() {
                       method="post"
                       className="form"
                     >
-                      <div class="form-group">
+                      <div className="form-group">
                         <button
                           type="submit"
                           name="button"

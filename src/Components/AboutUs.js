@@ -34,7 +34,7 @@ function Aboutus() {
               <div className="icon-box" data-aos="fade-up" data-aos-delay="100">
                 <div className="icon">
                   <i
-                    class="icofont-user-female"
+                    className="icofont-user-female"
                     style={{ color: "#051e6" }}
                   ></i>
                 </div>
@@ -49,7 +49,7 @@ function Aboutus() {
 
               <div className="icon-box" data-aos="fade-up" data-aos-delay="100">
                 <div className="icon">
-                  <i class="bx bx-gift" style={{ color: "#051e6" }}></i>
+                  <i className="bx bx-gift" style={{ color: "#051e6" }}></i>
                 </div>
                 <h4 className="title">
                   <Link to="">What we want to offer</Link>
@@ -64,16 +64,16 @@ function Aboutus() {
         </div>
       </section>
 
-      <section class="about-lists">
-        <div class="container">
-          <div class="text-center">
+      <section className="about-lists">
+        <div className="container">
+          <div className="text-center">
             <h2>Why we do this</h2>
           </div>
 
-          <div class="row no-gutters">
-            <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up">
+          <div className="row no-gutters">
+            <div className="col-lg-4 col-md-6 content-item" data-aos="fade-up">
               <span
-                class="icofont-gift text-center"
+                className="icofont-gift text-center"
                 style={{ color: "#051e63" }}
               ></span>
               <h4>RAISE MONEY FOR CHARITY</h4>
@@ -84,12 +84,12 @@ function Aboutus() {
             </div>
 
             <div
-              class="col-lg-4 col-md-6 content-item"
+              className="col-lg-4 col-md-6 content-item"
               data-aos="fade-up"
               data-aos-delay="100"
             >
               <span
-                class="icofont-user-female text-center"
+                className="icofont-user-female text-center"
                 style={{ color: "#051e63" }}
               ></span>
               <h4>BREAK THE STEREOTYPE OF GIRLS IN SPORTS</h4>
@@ -101,12 +101,12 @@ function Aboutus() {
             </div>
 
             <div
-              class="col-lg-4 col-md-6 content-item"
+              className="col-lg-4 col-md-6 content-item"
               data-aos="fade-up"
               data-aos-delay="200"
             >
               <span
-                class="icofont-trophy text-center"
+                className="icofont-trophy text-center"
                 style={{ color: "#051e63" }}
               ></span>
               <h4>CELEBRATE TALENTED GIRLS IN SPORTS</h4>

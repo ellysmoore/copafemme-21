@@ -119,10 +119,10 @@ function SlideShow() {
               dataSlide="next"
             >
               <span
-                class="carousel-control-next-icon icofont-rounded-right"
+                className="carousel-control-next-icon icofont-rounded-right"
                 aria-hidden="true"
               ></span>
-              <span class="sr-only">Next</span>
+              <span className="sr-only">Next</span>
             </Link>
           </div>
         </div>

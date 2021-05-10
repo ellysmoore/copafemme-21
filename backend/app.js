@@ -31,20 +31,29 @@ transporter.verify(function (err, success){
 });
 
 app.post('/send', (req, res) => {
-  const {fullname, email, subject, message} = req.body;
+  const {fullname, email, subject, message, teamName, phoneNumber, playerNames} = req.body;
   console.log(req.body)
 
   let maillist = [
     'test@copafemme.com',
     'test_two@copafemme.com'
   ];
+  let htmlTemp = '';
+  if(message) {
+    htmlTemp = `<h3>${fullname}</h3>
+    <p>${message}</p>`;
+  } else if(playerNames) {
+    htmlTemp = `<h3>Team Name: ${teamName}</h3>
+    <p>${phoneNumber}</p>
+    <h3>Player Names</h3>
+    <p>${playerNames}</p>`
+  }
 
   transporter.sendMail({
     to: maillist,
     from: email,
-    subject: subject,
-    html: `<h3>${fullname}</h3>
-    <p>${message}</p>`,
+    subject: subject ? subject : 'Team Registration',
+    html: htmlTemp,
   }).then(() => {
     res.send('Message sent successfully')
     console.log('Message sent successfully');
@@ -52,6 +61,7 @@ app.post('/send', (req, res) => {
     console.log(err);
   })
 });
+
 
 PORT = process.env.PORT || 3060
 

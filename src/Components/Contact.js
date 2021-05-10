@@ -23,7 +23,6 @@ function Contact() {
 
   const onSubmitHandler = async(e) => {
     e.preventDefault();
-    console.log(values)
 
     const data = {
       fullname: values.fullname,
@@ -39,7 +38,7 @@ function Contact() {
         "http://localhost:3060/send",
         data
       );
-      console.log(res.request.response);
+      console.log(res);
       setMessages(res.request.response);
       setIsSubmitted(false)
       setIsDisplayed(true)
