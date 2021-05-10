@@ -21,6 +21,7 @@ function Sponsors() {
                   <img
                     src={sponsor.image}
                     style={{ height: 150, width: 150 }}
+                    alt=''
                   />
                   <h3>{sponsor.name}</h3>
                 </div>

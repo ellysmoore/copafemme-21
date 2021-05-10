@@ -4,10 +4,6 @@ import img1 from "../img/slide/slide-1.jpg";
 import img2 from "../img/slide/slide-2.jpg";
 import img3 from "../img/slide/slide-3.jpg";
 
-var sectionStyle = {
-  backgroundImage: "url(" + { img1 } + ")",
-};
-
 function SlideShow() {
   return (
     <div>

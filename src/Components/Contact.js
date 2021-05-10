@@ -1,6 +1,68 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios";
 
 function Contact() {
+
+  const [values, setValues] = useState({
+    fullname:'',
+    email: '',
+    subject: '',
+    message: ''
+  })
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isDisplayed, setIsDisplayed] = useState(false)
+  const [messages, setMessages] = useState(null)
+  const [disable, setDisable] = useState(false)
+
+  function handleChange(e) {
+    setValues({
+      ...values,
+      [e.target.name]:e.target.value
+    })
+  }
+
+  const onSubmitHandler = async(e) => {
+    e.preventDefault();
+    console.log(values)
+
+    const data = {
+      fullname: values.fullname,
+      email: values.email,
+      subject: values.subject,
+      message: values.message,
+    }
+
+    try{
+      setIsSubmitted(true)
+      setDisable(true)
+      const res = await axios.post(
+        "http://localhost:3060/send",
+        data
+      );
+      console.log(res.request.response);
+      setMessages(res.request.response);
+      setIsSubmitted(false)
+      setIsDisplayed(true)
+      setDisable(false)
+      setValues({
+        fullname:'',
+        email: '',
+        subject: '',
+        message: ''
+      })
+      setTimeout(
+        function() {
+          setIsDisplayed(false);
+          setMessages(null)
+        },
+        3000
+      )
+    }catch(err) {
+      console.log(err);
+    }
+
+  }
+
   return (
     <div>
       <section id="contact" className="contact">
@@ -49,23 +111,25 @@ function Contact() {
             </div>
 
             <div className="col-lg-12" data-aos="fade-up" data-aos-delay="300">
+              {isDisplayed && <h3 className="my-3 text-success">{messages}</h3>}
               <form
-                action=""
                 id="profileForm"
                 className="profile-form"
-                method="post"
                 novalidate
+                onSubmit={(e) => onSubmitHandler(e)}
               >
                 <div className="form-row">
                   <div class="col-lg-6 form-group">
                     <input
                       type="text"
-                      name="username"
+                      name="fullname"
                       className="form-control"
-                      id="username"
+                      id="fullname"
                       placeholder="Your Name"
                       data-rule="minlen:4"
                       data-msg="Please enter at least 4 chars"
+                      onChange={handleChange}
+                      value={values.fullname}
                       required
                     />
                     <div className="validate"></div>
@@ -74,10 +138,13 @@ function Contact() {
                     <input
                       type="email"
                       className="form-control"
+                      name="email"
                       id="email"
                       placeholder="Your Email"
                       data-rule="email"
                       data-msg="Please enter a valid email"
+                      onChange={handleChange}
+                      value={values.email}
                       required
                     />
                     <div className="validate"></div>
@@ -92,6 +159,8 @@ function Contact() {
                     placeholder="Subject"
                     data-rule="minlen:4"
                     data-msg="Please enter at least 8 chars of subject"
+                    onChange={handleChange}
+                    value={values.subject}
                     required
                   />
                   <div className="validate"></div>
@@ -105,6 +174,8 @@ function Contact() {
                     data-rule="required"
                     data-msg="Please write something for us"
                     placeholder="Message"
+                    onChange={handleChange}
+                    value={values.message}
                     required
                   ></textarea>
                   <div className="validate"></div>
@@ -112,11 +183,21 @@ function Contact() {
                 <div className="text-center">
                   <button
                     type="submit"
-                    style={{ backgroundColor: "#051e63", color: "#fff" }}
+                    style={{ backgroundColor: "#051E63", color: "#FFF" }}
                     className="btn-profile btn"
+                    disabled={disable}
                   >
                     Send Message
                   </button>
+                  { isSubmitted && <div>
+                  <span
+                      className="spinner-border mt-3"
+                      role="status"
+                      style={{ color: "#051E63" }}
+                    >
+                      <span className="sr-only">Loading...</span>
+                    </span>
+                    </div> }
                 </div>
               </form>
             </div>
