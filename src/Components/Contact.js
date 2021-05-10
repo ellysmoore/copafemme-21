@@ -1,27 +1,26 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 function Contact() {
-
   const [values, setValues] = useState({
-    fullname:'',
-    email: '',
-    subject: '',
-    message: ''
-  })
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isDisplayed, setIsDisplayed] = useState(false)
-  const [messages, setMessages] = useState(null)
-  const [disable, setDisable] = useState(false)
+    fullname: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isDisplayed, setIsDisplayed] = useState(false);
+  const [messages, setMessages] = useState(null);
+  const [disable, setDisable] = useState(false);
 
   function handleChange(e) {
     setValues({
       ...values,
-      [e.target.name]:e.target.value
-    })
+      [e.target.name]: e.target.value,
+    });
   }
 
-  const onSubmitHandler = async(e) => {
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
 
     const data = {
@@ -29,38 +28,31 @@ function Contact() {
       email: values.email,
       subject: values.subject,
       message: values.message,
-    }
+    };
 
-    try{
-      setIsSubmitted(true)
-      setDisable(true)
-      const res = await axios.post(
-        "http://localhost:3060/send",
-        data
-      );
+    try {
+      setIsSubmitted(true);
+      setDisable(true);
+      const res = await axios.post("http://copafemme:3060/send", data);
       console.log(res);
       setMessages(res.request.response);
-      setIsSubmitted(false)
-      setIsDisplayed(true)
-      setDisable(false)
+      setIsSubmitted(false);
+      setIsDisplayed(true);
+      setDisable(false);
       setValues({
-        fullname:'',
-        email: '',
-        subject: '',
-        message: ''
-      })
-      setTimeout(
-        function() {
-          setIsDisplayed(false);
-          setMessages(null)
-        },
-        3000
-      )
-    }catch(err) {
+        fullname: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+      setTimeout(function () {
+        setIsDisplayed(false);
+        setMessages(null);
+      }, 3000);
+    } catch (err) {
       console.log(err);
     }
-
-  }
+  };
 
   return (
     <div>
@@ -188,15 +180,17 @@ function Contact() {
                   >
                     Send Message
                   </button>
-                  { isSubmitted && <div>
-                  <span
-                      className="spinner-border mt-3"
-                      role="status"
-                      style={{ color: "#051E63" }}
-                    >
-                      <span className="sr-only">Loading...</span>
-                    </span>
-                    </div> }
+                  {isSubmitted && (
+                    <div>
+                      <span
+                        className="spinner-border mt-3"
+                        role="status"
+                        style={{ color: "#051E63" }}
+                      >
+                        <span className="sr-only">Loading...</span>
+                      </span>
+                    </div>
+                  )}
                 </div>
               </form>
             </div>

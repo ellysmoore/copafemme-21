@@ -44,7 +44,7 @@ function RegisterTeam() {
     try {
       setIsSubmitting(true);
       const res = axios.post(
-          "http://localhost:3060/send",
+          "http://copafemme:3060/send",
           data
       );
       setIsSubmitting(false)
