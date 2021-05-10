@@ -33,7 +33,7 @@ function Contact() {
     try {
       setIsSubmitted(true);
       setDisable(true);
-      const res = await axios.post("http://copafemme:3060/send", data);
+      const res = await axios.post("http://copafemme.com:3060/send", data);
       console.log(res);
       setMessages(res.request.response);
       setIsSubmitted(false);
