@@ -1,5 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import dami from "../img/damilola.jpg";
+import ore from "../img/ore.jpeg";
+import jegede from "../img/jegede.jpeg";
+import abiodun from "../img/abiodun.jpeg";
+import moyo from "../img/moyo.jpeg";
 
 function Teams() {
   return (
@@ -43,7 +48,7 @@ function Teams() {
             >
               <div className="member">
                 <div className="pic">
-                  <img src="team-2.jpg" className="img-fluid" alt="" />
+                  <img src={dami} className="img-fluid" alt="" />
                 </div>
                 <div className="member-info">
                   <h4>Sofidiya Damilola</h4>
@@ -67,11 +72,7 @@ function Teams() {
             >
               <div className="member">
                 <div className="pic">
-                  <img
-                    src="assets/img/team/team2.jpeg"
-                    className="img-fluid"
-                    alt=""
-                  />
+                  <img src={ore} className="img-fluid" alt="" />
                 </div>
                 <div className="member-info">
                   <h4>Ore-ofe Oluwajobi</h4>
@@ -95,11 +96,7 @@ function Teams() {
             >
               <div className="member">
                 <div className="pic">
-                  <img
-                    src="assets/img/team/team1.jpeg"
-                    className="img-fluid"
-                    alt=""
-                  />
+                  <img src={jegede} className="img-fluid" alt="" />
                 </div>
                 <div className="member-info">
                   <h4>Jegede Olumide </h4>
@@ -123,11 +120,7 @@ function Teams() {
             >
               <div className="member">
                 <div className="pic">
-                  <img
-                    src="assets/img/team/team3.jpeg"
-                    className="img-fluid"
-                    alt=""
-                  />
+                  <img src={abiodun} className="img-fluid" alt="" />
                 </div>
                 <div className="member-info">
                   <h4>Abiodun Salami</h4>
@@ -151,7 +144,7 @@ function Teams() {
             >
               <div className="member">
                 <div className="pic">
-                  <img src="moyo.jpeg" className="img-fluid" alt="" />
+                  <img src={moyo} className="img-fluid" alt="" />
                 </div>
                 <div className="member-info">
                   <h4>Moyo Adeniji</h4>
