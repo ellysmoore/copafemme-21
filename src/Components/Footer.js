@@ -9,14 +9,14 @@ function Footer() {
           <div class="copyright">
            <p>2021
             <strong>
-              <span> Copa Femme</span>
+              <span> Copafemme</span>
             </strong>
             .
             </p>
           </div>
           <div class="credits">
             Delivered by
-            <Link to="https://techspice.com.ng/"> Techspice Limited</Link>
+            <Link to="https://techspice.com.ng/" target="_blank"> Techspice Limited</Link>
           </div>
         </div>
       </footer>
