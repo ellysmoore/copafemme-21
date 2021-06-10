@@ -1,70 +1,80 @@
-const express = require('express')
+const express = require("express");
 const app = express();
-const nodemailer = require('nodemailer');
-const cors = require('cors');
-const bodyParser = require('body-parser');
+const nodemailer = require("nodemailer");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const transporter = nodemailer.createTransport({
   pool: true,
-  host: 'mail.copafemme.com',
+  host: "mail.copafemme.com",
   port: 587,
   secureConnection: false,
   auth: {
-    user: 'test@copafemme.com',
-    pass: 'copafemmeTest1234',
+    user: "info@copafemme.com",
+    pass: "1nf0",
   },
-  tls:{
-    rejectUnauthorized: false
-}
+  tls: {
+    rejectUnauthorized: false,
+  },
 });
 
-transporter.verify(function (err, success){
-  if(err) {
+transporter.verify(function (err, success) {
+  if (err) {
     console.log(err);
   } else {
     console.log("Server is ready to take messages!");
   }
 });
 
-app.post('/send', (req, res) => {
-  const {fullname, email, subject, message, teamName, phoneNumber, playerNames} = req.body;
-  console.log(req.body)
+app.post("/send", (req, res) => {
+  const {
+    fullname,
+    email,
+    subject,
+    message,
+    teamName,
+    phoneNumber,
+    playerNames,
+  } = req.body;
+  console.log(req.body);
 
   let maillist = [
-    'test@copafemme.com',
-    'test_two@copafemme.com'
+    "1nf0@copafemme.com",
+    "damilade@copafemme.com",
+    "damilola@copafemme.com",
   ];
-  let htmlTemp = '';
-  if(message) {
+  let htmlTemp = "";
+  if (message) {
     htmlTemp = `<h3>${fullname}</h3>
     <p>${message}</p>`;
-  } else if(playerNames) {
+  } else if (playerNames) {
     htmlTemp = `<h3>Team Name: ${teamName}</h3>
     <p>${phoneNumber}</p>
     <h3>Player Names</h3>
-    <p>${playerNames}</p>`
+    <p>${playerNames}</p>`;
   }
 
-  transporter.sendMail({
-    to: maillist,
-    from: email,
-    subject: subject ? subject : 'Team Registration',
-    html: htmlTemp,
-  }).then(() => {
-    res.send('Message sent successfully')
-    console.log('Message sent successfully');
-  }).catch(err =>{
-    console.log(err);
-  })
+  transporter
+    .sendMail({
+      to: maillist,
+      from: email,
+      subject: subject ? subject : "Team Registration",
+      html: htmlTemp,
+    })
+    .then(() => {
+      res.send("Message sent successfully");
+      console.log("Message sent successfully");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
+PORT = process.env.PORT || 3060;
 
-PORT = process.env.PORT || 3060
-
-
-app.get('/', (req, res) => res.send('Hello World!'))
-app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
+app.get("/", (req, res) => res.send("Hello World!"));
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));

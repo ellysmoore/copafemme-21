@@ -28,7 +28,7 @@ function Teams() {
                 </div>
                 <div className="member-info">
                   <h4>Filani Demilade </h4>
-                  <span>Founder</span>
+                  <span>Co-Founder</span>
                   <div className="social">
                     <Link to="">
                       <i className="icofont-twitter"></i>
@@ -52,7 +52,7 @@ function Teams() {
                 </div>
                 <div className="member-info">
                   <h4>Sofidiya Damilola</h4>
-                  <span>Executive Director</span>
+                  <span>Co-Founder</span>
                   <div className="social">
                     <Link to="">
                       <i claclassNamess="icofont-twitter"></i>
