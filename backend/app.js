@@ -43,7 +43,7 @@ app.post("/send", (req, res) => {
   console.log(req.body);
 
   let maillist = [
-    "1nf0@copafemme.com",
+    "info@copafemme.com",
     "damilade@copafemme.com",
     "damilola@copafemme.com",
   ];
