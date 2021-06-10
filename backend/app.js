@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const transporter = nodemailer.createTransport({
   pool: true,
   host: "mail.copafemme.com",
-  port: 995,
+  port: 587,
   secureConnection: false,
   auth: {
     user: "info@copafemme.com",
