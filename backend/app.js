@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const transporter = nodemailer.createTransport({
   pool: true,
   host: "mail.copafemme.com",
-  port: 587,
+  port: 995,
   secureConnection: false,
   auth: {
     user: "info@copafemme.com",
@@ -49,12 +49,12 @@ app.post("/send", (req, res) => {
   ];
   let htmlTemp = "";
   if (message) {
-    htmlTemp = `<h3>${fullname}</h3>
-    <p>${message}</p>`;
+    htmlTemp = `<h3>Fullname: ${fullname}</h3>
+    <p>Message: ${message}</p>`;
   } else if (playerNames) {
     htmlTemp = `<h3>Team Name: ${teamName}</h3>
-    <p>${phoneNumber}</p>
-    <h3>Player Names</h3>
+    <p>Contact Phone Number: ${phoneNumber}</p>
+    <h3>Player Names: </h3>
     <p>${playerNames}</p>`;
   }
 
