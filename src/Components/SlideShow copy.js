@@ -31,27 +31,27 @@ function SlideShow() {
   return (
     <div>
       <section id="hero">
-        <div class="hero-container">
+        <div className="hero-container">
           <div
             id="heroCarousel"
-            class="carousel slide carousel-fade"
+            className="carousel slide carousel-fade"
             data-ride="carousel"
           >
-            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+            <ol className="carousel-indicators" id="hero-carousel-indicators"></ol>
 
-            <div class="carousel-inner" role="listbox">
+            <div className="carousel-inner" role="listbox">
               {/* <!-- Slide 1 --> */}
               <div
-                class="carousel-item active"
+                className="carousel-item active"
                 style={{
                   backgroundImage: `url(require("../img/slide/slide-1.jpg"))`,
                 }}
               >
-                <div class="carousel-container">
-                  <div class="carousel-content container">
+                <div className="carousel-container">
+                  <div className="carousel-content container">
                       <h2 className="animated fadeInDown">
                         {/* <span>
-                        C<i class="icofont-soccer"></i>PA FEMME
+                        C<i className="icofont-soccer"></i>PA FEMME
                       </span> */}
                       </h2>
                     <p className="animated fadeInUp">
@@ -61,7 +61,7 @@ function SlideShow() {
                     </p>
                     <Link
                       to="/about"
-                      class="btn-get-started animated fadeInUp scrollto"
+                      className="btn-get-started animated fadeInUp scrollto"
                       style={{ backgroundColor: "#051e63" }}
                     >
                       Read More
@@ -72,21 +72,21 @@ function SlideShow() {
 
               {/* <!-- Slide 2 --> */}
               <div
-                class="carousel-item"
+                className="carousel-item"
                 style={{
                   backgroundImage: `url(require("../img/slide/slide-2.jpg"))`,
                 }}
               >
-                <div class="carousel-container">
-                  <div class="carousel-content container">
-                    <h2 class="animated fadeInDown">RAISE MONEY FOR CHARITY</h2>
-                    <p class="animated fadeInUp">
+                <div className="carousel-container">
+                  <div className="carousel-content container">
+                    <h2 className="animated fadeInDown">RAISE MONEY FOR CHARITY</h2>
+                    <p className="animated fadeInUp">
                       We Aim To Support Various Female Focused Causes In Nigeria
                       And All Profits Generated Will Be Donated To Charity.
                     </p>
                     <a
                       href="#about"
-                      class="btn-get-started animated fadeInUp scrollto"
+                      className="btn-get-started animated fadeInUp scrollto"
                       style={{ backgroundColor: "#051e63" }}
                     >
                       Read More
@@ -97,23 +97,23 @@ function SlideShow() {
 
               {/* <!-- Slide 3 --> */}
               <div
-                class="carousel-item"
+                className="carousel-item"
                 style={{
                   backgroundImage: `url(require("../img/slide/slide-3.jpg"))`,
                 }}
               >
-                <div class="carousel-container">
-                  <div class="carousel-content container">
-                    <h2 class="animated fadeInDown">
+                <div className="carousel-container">
+                  <div className="carousel-content container">
+                    <h2 className="animated fadeInDown">
                       CELEBRATE TALENTED YOUNG WOMEN IN SPORTS
                     </h2>
-                    <p class="animated fadeInUp">
+                    <p className="animated fadeInUp">
                       We aim to celebrate talented young women in sports through
                       acknowledging them and giving awards.
                     </p>
                     <a
                       href="#about"
-                      class="btn-get-started animated fadeInUp scrollto"
+                      className="btn-get-started animated fadeInUp scrollto"
                       style={{ backgroundColor: "#051e63" }}
                     >
                       Read More
@@ -124,28 +124,28 @@ function SlideShow() {
             </div>
 
             <a
-              class="carousel-control-prev"
+              className="carousel-control-prev"
               href="#heroCarousel"
               role="button"
               data-slide="prev"
             >
               <span
-                class="carousel-control-prev-icon icofont-rounded-left"
+                className="carousel-control-prev-icon icofont-rounded-left"
                 aria-hidden="true"
               ></span>
-              <span class="sr-only">Previous</span>
+              <span className="sr-only">Previous</span>
             </a>
             <a
-              class="carousel-control-next"
+              className="carousel-control-next"
               href="#heroCarousel"
               role="button"
               data-slide="next"
             >
               <span
-                class="carousel-control-next-icon icofont-rounded-right"
+                className="carousel-control-next-icon icofont-rounded-right"
                 aria-hidden="true"
               ></span>
-              <span class="sr-only">Next</span>
+              <span className="sr-only">Next</span>
             </a>
           </div>
         </div>

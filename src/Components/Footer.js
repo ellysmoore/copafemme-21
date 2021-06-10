@@ -5,8 +5,8 @@ function Footer() {
   return (
     <div>
       <footer id="footer" style={{ backgroundColor: "#051e63" }}>
-        <div class="container">
-          <div class="copyright">
+        <div className="container">
+          <div className="copyright">
            <p>2021
             <strong>
               <span> Copafemme</span>
@@ -14,7 +14,7 @@ function Footer() {
             .
             </p>
           </div>
-          <div class="credits">
+          <div className="credits">
             Delivered by
             <Link to="https://techspice.com.ng/" target="_blank"> Techspice Limited</Link>
           </div>

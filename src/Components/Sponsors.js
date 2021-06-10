@@ -12,12 +12,12 @@ function Sponsors() {
           <div className="row">
             {SponsorsList.map((sponsor) => (
               <div
-                class="col-lg-3 d-flex align-items-stretch"
+                className="col-lg-3 d-flex align-items-stretch"
                 data-aos="fade-up"
                 data-aos-delay="100"
                 key={sponsor.id}
               >
-                <div class="info-box">
+                <div className="info-box">
                   <img
                     src={sponsor.image}
                     style={{ height: 150, width: 150 }}
@@ -28,11 +28,11 @@ function Sponsors() {
               </div>
             ))}
             {/* <div
-              class="col-lg-3 d-flex align-items-stretch"
+              className="col-lg-3 d-flex align-items-stretch"
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div class="info-box">
+              <div className="info-box">
                 <img
                   src="assets/img/cowrywise.jpeg"
                   alt=""
@@ -44,11 +44,11 @@ function Sponsors() {
             </div> */}
 
             {/* <div
-              class="col-lg-3 d-flex align-items-stretch"
+              className="col-lg-3 d-flex align-items-stretch"
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div class="info-box">
+              <div className="info-box">
                 <img
                   src="assets/img/danfo.jpeg"
                   alt=""
@@ -60,11 +60,11 @@ function Sponsors() {
             </div>
 
             <div
-              class="col-lg-3 d-flex align-items-stretch"
+              className="col-lg-3 d-flex align-items-stretch"
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div class="info-box">
+              <div className="info-box">
                 <img
                   src="assets/img/plug.jpeg"
                   alt=""
@@ -76,11 +76,11 @@ function Sponsors() {
             </div>
 
             <div
-              class="col-lg-3 d-flex align-items-stretch"
+              className="col-lg-3 d-flex align-items-stretch"
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div class="info-box">
+              <div className="info-box">
                 <img
                   src="assets/img/sanitary.jpeg"
                   alt=""
@@ -92,11 +92,11 @@ function Sponsors() {
             </div>
 
             <div
-              class="col-lg-3 d-flex align-items-stretch"
+              className="col-lg-3 d-flex align-items-stretch"
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div class="info-box">
+              <div className="info-box">
                 <img
                   src="assets/img/plus.jpeg"
                   alt=""
@@ -108,11 +108,11 @@ function Sponsors() {
             </div>
 
             <div
-              class="col-lg-3 d-flex align-items-stretch"
+              className="col-lg-3 d-flex align-items-stretch"
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div class="info-box">
+              <div className="info-box">
                 <img
                   src="assets/img/brila.jpeg"
                   alt=""
@@ -124,11 +124,11 @@ function Sponsors() {
             </div> */}
 
             {/* <div
-              class="col-lg-3 d-flex align-items-stretch"
+              className="col-lg-3 d-flex align-items-stretch"
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div class="info-box">
+              <div className="info-box">
                 <img
                   src="assets/img/kayode.jpeg"
                   alt=""

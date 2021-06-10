@@ -57,7 +57,7 @@ function Contact() {
   return (
     <div>
       <section id="contact" className="contact">
-        <div class="container">
+        <div className="container">
           <div className="section-title">
             <h2 style={{ color: "#051e63" }}>Contact Us</h2>
           </div>
@@ -106,11 +106,11 @@ function Contact() {
               <form
                 id="profileForm"
                 className="profile-form"
-                novalidate
+                noValidate
                 onSubmit={(e) => onSubmitHandler(e)}
               >
                 <div className="form-row">
-                  <div class="col-lg-6 form-group">
+                  <div className="col-lg-6 form-group">
                     <input
                       type="text"
                       name="fullname"

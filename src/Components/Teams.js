@@ -55,7 +55,7 @@ function Teams() {
                   <span>Co-Founder</span>
                   <div className="social">
                     <Link to="">
-                      <i claclassNamess="icofont-twitter"></i>
+                      <i classNames="icofont-twitter"></i>
                     </Link>
                     <Link to="">
                       <i className="icofont-instagram"></i>
