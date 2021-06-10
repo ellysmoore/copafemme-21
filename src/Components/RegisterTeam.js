@@ -7,20 +7,24 @@ function RegisterTeam() {
     email: "",
     phoneNumber: "",
     playerNames: "",
+    sportType: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isDisplayed, setIsDisplayed] = useState(false)
+  const [isDisplayed, setIsDisplayed] = useState(false);
 
   const validate = () => {
     let err = {};
     if (!values.teamName) {
-      err.teamName = "teamName is required";
+      err.teamName = "team Name is required";
     }
     if (!values.email) {
       err.email = "email is required";
     }
     if (!values.phoneNumber) {
-      err.phoneNumber = "phoneNumber is required";
+      err.phoneNumber = "phone Number is required";
+    }
+    if (!values.sportType) {
+      err.sportType = "Sport Type is required";
     }
     return err;
   };
@@ -39,33 +43,28 @@ function RegisterTeam() {
       teamName: values.teamName,
       email: values.email,
       phoneNumber: values.phoneNumber,
-      playerNames: values.playerNames
-    }
+      sportType: values.sportType,
+      playerNames: values.playerNames,
+    };
     try {
       setIsSubmitting(true);
-      const res = axios.post(
-          "http://copafemme.com:3060/send",
-          data
-      );
-      setIsSubmitting(false)
-      setIsDisplayed(true)
+      const res = axios.post("http://copafemme.com:3060/send", data);
+      setIsSubmitting(false);
+      setIsDisplayed(true);
       setValues({
-        teamName: '',
-        email: '',
-        phoneNumber: '',
-        playerNames: ''
-      })
-      setTimeout(
-          function() {
-            setIsDisplayed(false);
-          },
-          3000
-      )
+        teamName: "",
+        email: "",
+        phoneNumber: "",
+        sportType: "",
+        playerNames: "",
+      });
+      setTimeout(function () {
+        setIsDisplayed(false);
+      }, 3000);
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
   };
-
 
   return (
     <div>
@@ -77,11 +76,12 @@ function RegisterTeam() {
 
           <div className="card">
             <div className="card-body">
-              <form className="form" onSubmit={(e) =>  handleSubmit(e)}>
-
-                {isDisplayed && <div className="alert alert-success" role="alert">
-                  <b>Registration successful!</b>
-                </div> }
+              <form className="form" onSubmit={(e) => handleSubmit(e)}>
+                {isDisplayed && (
+                  <div className="alert alert-success" role="alert">
+                    <b>Registration successful!</b>
+                  </div>
+                )}
 
                 <div className="form-group">
                   <label for="">Team Name</label>
@@ -119,6 +119,18 @@ function RegisterTeam() {
                   />
                 </div>
                 <div className="form-group">
+                  <label for="">Sport Type</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="sportType"
+                    placeholder="Eg Basketball"
+                    required
+                    onChange={handleChange}
+                    value={values.sportType}
+                  />
+                </div>
+                <div className="form-group">
                   <label for="">
                     Names Of Players (7players each) skip if you do not have a
                     team
@@ -152,7 +164,7 @@ function RegisterTeam() {
                   >
                     Proceed
                   </button>
-                  {isSubmitting &&
+                  {isSubmitting && (
                     <div
                       className="spinner-border"
                       role="status"
@@ -160,7 +172,7 @@ function RegisterTeam() {
                     >
                       <span className="sr-only">Loading...</span>
                     </div>
-                  }
+                  )}
                 </div>
               </form>
             </div>
