@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function Contact() {
+
   const [values, setValues] = useState({
     fullname: "",
     email: "",
@@ -32,9 +33,8 @@ function Contact() {
 
     try {
       setIsSubmitted(true);
-      setDisable(true);
-      const res = await axios.post("http://copafemme.com:3060/send", data);
-      console.log(res);
+      // setDisable(true);
+      const res = await axios.post('https://copafemme.com:3004/send', data)
       setMessages(res.request.response);
       setIsSubmitted(false);
       setIsDisplayed(true);
@@ -176,7 +176,7 @@ function Contact() {
                     type="submit"
                     style={{ backgroundColor: "#051E63", color: "#FFF" }}
                     className="btn-profile btn"
-                    disabled={disable}
+                    // disabled={disable}
                   >
                     Send Message
                   </button>

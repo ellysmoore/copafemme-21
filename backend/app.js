@@ -68,15 +68,35 @@ app.post("/send", (req, res) => {
       html: htmlTemp,
     })
     .then(() => {
-      res.send("Message sent successfully");
+      if(message){
+        res.send("Message sent successfully");
+      }
+      else {
+        res.send("Team registered successfully");
+      }
       console.log("Message sent successfully");
     })
     .catch((err) => {
-      console.log(err);
+      if(err) {
+        transporter
+          .sendMail({
+            to: maillist,
+            from: email,
+            subject: subject ? subject : "Team Registration",
+            html: htmlTemp,
+          })
+          .then(() => {
+            res.send("Message sent successfully");
+            console.log("Message sent successfully");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
     });
 });
 
-PORT = process.env.PORT || 3060;
+PORT = process.env.PORT || 3004;
 
 app.get("/", (req, res) => res.send("Hello World!"));
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
