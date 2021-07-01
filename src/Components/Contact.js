@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function Contact() {
+
   const [values, setValues] = useState({
     fullname: "",
     email: "",
@@ -32,12 +33,17 @@ function Contact() {
 
     try {
       setIsSubmitted(true);
+<<<<<<< HEAD
       setDisable(true);
       const res = await axios.post(
         "https://copafemme-backend.herokuapp.com/send",
         data
       );
       console.log(res);
+=======
+      // setDisable(true);
+      const res = await axios.post('https://copafemme.com:3004/send', data)
+>>>>>>> 3ca686b3bfd14bb5d3da139c30d98944565d555f
       setMessages(res.request.response);
       setIsSubmitted(false);
       setIsDisplayed(true);
@@ -179,7 +185,7 @@ function Contact() {
                     type="submit"
                     style={{ backgroundColor: "#051E63", color: "#FFF" }}
                     className="btn-profile btn"
-                    disabled={disable}
+                    // disabled={disable}
                   >
                     Send Message
                   </button>

@@ -11,6 +11,8 @@ function RegisterTeam() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDisplayed, setIsDisplayed] = useState(false);
+  const [messages, setMessages] = useState(null);
+  const [disable, setDisable] = useState(false);
 
   const validate = () => {
     let err = {};
@@ -48,12 +50,18 @@ function RegisterTeam() {
     };
     try {
       setIsSubmitting(true);
+<<<<<<< HEAD
       const res = axios.post(
         "https://copafemme-backend.herokuapp.com/send",
         data
       );
+=======
+      const res = await axios.post("https://copafemme.com:3004/send", data);
+      setMessages(res.data);
+>>>>>>> 3ca686b3bfd14bb5d3da139c30d98944565d555f
       setIsSubmitting(false);
       setIsDisplayed(true);
+      setDisable(false);
       setValues({
         teamName: "",
         email: "",
@@ -63,6 +71,7 @@ function RegisterTeam() {
       });
       setTimeout(function () {
         setIsDisplayed(false);
+        setMessages(null);
       }, 3000);
     } catch (e) {
       console.log(e);
@@ -80,12 +89,7 @@ function RegisterTeam() {
           <div className="card">
             <div className="card-body">
               <form className="form" onSubmit={(e) => handleSubmit(e)}>
-                {isDisplayed && (
-                  <div className="alert alert-success" role="alert">
-                    <b>Registration successful!</b>
-                  </div>
-                )}
-
+              {isDisplayed && <h3 className="my-3 text-success">{messages}</h3>}
                 <div className="form-group">
                   <label for="">Team Name</label>
                   <input
@@ -123,15 +127,18 @@ function RegisterTeam() {
                 </div>
                 <div className="form-group">
                   <label for="">Sport Type</label>
-                  <input
-                    type="text"
+                  <select
                     className="form-control"
                     name="sportType"
                     placeholder="Eg Basketball"
                     required
                     onChange={handleChange}
                     value={values.sportType}
-                  />
+                  >
+                    <option value="">Select Sport</option>
+                    <option value="Football">Football</option>
+                    <option value="Basketball">Basketball</option>
+                  </select>
                 </div>
                 <div className="form-group">
                   <label for="">
