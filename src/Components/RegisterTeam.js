@@ -48,7 +48,10 @@ function RegisterTeam() {
     };
     try {
       setIsSubmitting(true);
-      const res = axios.post("http://copafemme.com:3060/send", data);
+      const res = axios.post(
+        "https://copafemme-backend.herokuapp.com/send",
+        data
+      );
       setIsSubmitting(false);
       setIsDisplayed(true);
       setValues({
