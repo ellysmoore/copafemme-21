@@ -42,8 +42,8 @@ function Aboutus() {
                   <Link to="">The Girls we do this for</Link>
                 </h4>
                 <p className="description">
-                  Voluptatum deleniti atque corrupti quos dolores et quas
-                  molestias excepturi sint occaecati cupiditate non provident
+                  For every girl who thinks there’s no space for her to compete
+                  or that sports is just for men. Let’s change that narrative.
                 </p>
               </div>
 
@@ -55,8 +55,8 @@ function Aboutus() {
                   <Link to="">What we want to offer</Link>
                 </h4>
                 <p className="description">
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque
+                  An avenue for girls to showcase their talents or be introduced
+                  to the world of sports.
                 </p>
               </div>
             </div>
